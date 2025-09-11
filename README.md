@@ -2,7 +2,7 @@
 
 - **Contributor:** Deepak Silaych
 - **Organisation:** MalariaGEN
-- **Mentors:** Anastasia HK, Chris Clarkson, Jon Brenas
+- **Mentors:** Anastasia Hernandez-Koutoucheva, Chris Clarkson, Jon Brenas
 - **Project Repository:** [malariagen/vector-taxon-classifier](https://github.com/malariagen/vector-taxon-classifier)
 - **Contact:** `deepaksilaych@gmail.com` / [GitHub Profile](https://github.com/deepaksilaych)
 
