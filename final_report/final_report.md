@@ -3,7 +3,7 @@
 - **Contributor:** Deepak Silaych
 - **Organisation:** MalariaGEN
 - **Mentors:** Anastasia Hernandez-Koutoucheva, Chris Clarkson, Jon Brenas
-- **Project Repository:** [malariagen/vector-taxon-classifier](https://github.com/malariagen/vector-taxon-classifier)
+- **Project Repository:** [malariagen/vector-taxon-classifier-prediction](https://github.com/malariagen/vector-taxon-classifier-prediction)
 - **Contact:** `deepaksilaych@gmail.com` / [GitHub Profile](https://github.com/deepaksilaych)
 
 ---
@@ -80,12 +80,12 @@ This exploratory phase proved that the partitioned ensemble strategy was highly 
 
 | Milestone                      | Short description                                                              | Status | Link                                                                                                                                    |
 | :----------------------------- | :----------------------------------------------------------------------------- | :----- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| **Initial Data Exploration**   | Analyzed training data from the MalariaGEN API, identified class imbalance.    | Done   | [01_EDA_Training_Data.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/01_EDA_Training_Data.ipynb) |
-| **Model Prototyping**          | Compared several models and selected Random Forest for its robust performance. | Done   | [3-Copy1.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/3-Copy1.ipynb)                           |
-| **Ensemble Training Pipeline** | Developed the script to partition the genome and train a model for each chunk. | Done   | [trainv3.5.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/trainv3.5.ipynb)                       |
-| **Validation & Analysis**      | Aggregated cross-validation scores to rank partitions and select the top 50.   | Done   | [score-analysis.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/score-analysis.ipynb)             |
-| **CLI & API Development**      | Packaged the core logic into a Python library with a command-line interface.   | Done   | [main.py](https://github.com/malariagen/vector-taxon-classifier/tree/prod/src/main.py)                                                  |
-| **Documentation & Tutorials**  | Wrote user guides and five Jupyter notebooks demonstrating usage.              | Done   | [notebooks/](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks)                                            |
+| **Initial Data Exploration**   | Analyzed training data from the MalariaGEN API, identified class imbalance.    | Done   | [1_EDA_Training_Data.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/1_EDA_Training_Data.ipynb) |
+| **Model Prototyping**          | Compared several models and selected Random Forest for its robust performance. | Done   | [5_xgboost_train.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/5_xgboost_train.ipynb)                           |
+| **Ensemble Training Pipeline** | Developed the script to partition the genome and train a model for each chunk. | Done   | [6_RF_train.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/6_RF_train.ipynb)                       |
+| **Validation & Analysis**      | Aggregated cross-validation scores to rank partitions and select the top 50.   | Done   | [7_evalutaion.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/7_evalutaion.ipynb)             |
+| **CLI & API Development**      | Packaged the core logic into a Python library with a command-line interface.   | Done   | [main.py](https://github.com/malariagen/vector-taxon-classifier-prediction/blob/master/src/main.py)                                                  |
+| **Documentation & Tutorials**  | Wrote user guides and five Jupyter notebooks demonstrating usage.              | Done   | [notebooks/](https://github.com/malariagen/vector-taxon-classifier-prediction)                                            |
 
 ---
 
@@ -93,11 +93,11 @@ This exploratory phase proved that the partitioned ensemble strategy was highly 
 
 - **High-Accuracy Partitions Identified:** Through the validation framework, **I identified** the most predictive regions of the genome. The top 50 partitions achieved mean cross-validation accuracies ranging from a high of **99.98%** down to **98.47%**, demonstrating that my partitioned approach was highly effective.
 
-- **Robust Ensemble Prediction:** The ensemble classifier **I built**, using a majority vote from these top 50 partitions, correctly classified test samples. For example, in my tests ([zarr_test.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/zarr_test.ipynb)), it correctly predicted sample `AR0047-C` as `coluzzii` by leveraging the strong consensus from these high-performing models.
+- **Robust Ensemble Prediction:** The ensemble classifier **I built**, using a majority vote from these top 50 partitions, correctly classified test samples. For example, in my tests ([11_zarr_test.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/11_zarr_test.ipynb)), it correctly predicted sample `AR0047-C` as `coluzzii` by leveraging the strong consensus from these high-performing models.
 
-- **Usable Deliverables:** **I delivered** a fully packaged Python library on GitHub ([malariagen-vector-taxon-classifier](https://github.com/malariagen/vector-taxon-classifier)), which includes the pre-trained models, a [CLI](https://github.com/malariagen/vector-taxon-classifier/tree/prod/src/cli.py), and a programmatic [API](https://github.com/malariagen/vector-taxon-classifier/tree/prod/src/main.py) for easy use by the research community.
+- **Usable Deliverables:** **I delivered** a fully packaged Python library on GitHub ([malariagen-vector-taxon-classifier](https://github.com/malariagen/vector-taxon-classifier-prediction)), which includes the pre-trained models, a [CLI](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/src/cli.py), and a programmatic [API](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/src/main.py) for easy use by the research community.
 
-- **Comprehensive Tutorials:** To ensure the tool is accessible, **I developed** a suite of five Jupyter notebooks ([01_basic_setup.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/01_basic_setup.ipynb) to [05_CLI_and_Utilities.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/05_CLI_and_Utilities.ipynb)) that provide users with a step-by-step guide for installation, data loading, and prediction.
+- **Comprehensive Tutorials:** To ensure the tool is accessible, **I developed** a suite of five Jupyter notebooks ([01_basic_setup.ipynb](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/notebooks/01_basic_setup.ipynb) to [05_CLI_and_Utilities.ipynb](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/notebooks/05_CLI_and_Utilities.ipynb)) that provide users with a step-by-step guide for installation, data loading, and prediction.
 
 My key takeaway is that the partitioned ensemble approach is a highly effective strategy for genomic classification. It successfully breaks down a massive computational problem into manageable parts and leverages the most informative regions of the genome to deliver highly accurate and reliable results.
 
@@ -105,9 +105,9 @@ My key takeaway is that the partitioned ensemble approach is a highly effective 
 
 ### 6. Reflections & What I Learned
 
-This GSoC project was a deep dive into the practical challenges of applying machine learning to massive scientific datasets. My biggest technical lesson was the importance of a modular, iterative workflow. I started by focusing on finding the "perfect" model, but quickly realized that the real breakthrough came from architecting a robust pipeline for data processing and partitioning first. This framework allowed me to experiment with different models, analyze results ([score-analysis.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/score-analysis.ipynb)), and systematically build a better solution.
+This GSoC project was a deep dive into the practical challenges of applying machine learning to massive scientific datasets. My biggest technical lesson was the importance of a modular, iterative workflow. I started by focusing on finding the "perfect" model, but quickly realized that the real breakthrough came from architecting a robust pipeline for data processing and partitioning first. This framework allowed me to experiment with different models, analyze results ([7_evalutaion.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/7_evalutaion.ipynb)), and systematically build a better solution.
 
-The biggest challenge I faced was managing the sheer scale of the data and the long training times. A single run to train models for all partitions could take hours. I tackled this by writing scripts that could be stopped and resumed, logging progress meticulously, and parallelizing tasks where possible. My proudest moment was seeing the final packaged tool—with its clean [CLI](https://github.com/malariagen/vector-taxon-classifier/tree/prod/src/cli.py) and tutorial notebooks—come together. It transformed a collection of experimental scripts into a polished, professional tool that others could easily use, which felt like the true culmination of my work.
+The biggest challenge I faced was managing the sheer scale of the data and the long training times. A single run to train models for all partitions could take hours. I tackled this by writing scripts that could be stopped and resumed, logging progress meticulously, and parallelizing tasks where possible. My proudest moment was seeing the final packaged tool—with its clean [CLI](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/src/cli.py) and tutorial notebooks—come together. It transformed a collection of experimental scripts into a polished, professional tool that others could easily use, which felt like the true culmination of my work.
 
 ---
 
@@ -118,7 +118,7 @@ This project provides a strong foundation for genomic species classification. Th
 - **Automate Model Retraining (High Priority):**
 
   - **Why it matters:** The MalariaGEN Vector Observatory is continuously updated. The tool needs a clear, automated workflow for retraining all partition models on new genomic data releases to maintain accuracy.
-  - **Complexity:** Medium. Involves scripting the existing training pipeline ([trainv3.5.ipynb](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks/trainv3.5.ipynb)) to run as a single, robust command.
+  - **Complexity:** Medium. Involves scripting the existing training pipeline ([6_RF_train.ipynb](https://github.com/malariagen/vector-taxon-classifier/blob/master/6_RF_train.ipynb)) to run as a single, robust command.
 
 - **Incorporate Additional Species (Medium Priority):**
   - **Why it matters:** The current models are trained on the _An. gambiae_ complex. Expanding the tool to classify species from other complexes (e.g., _An. funestus_) would greatly increase its impact.
@@ -134,9 +134,9 @@ Based on my experience this summer, I would offer the following advice to future
 
 - **Communication is Your Best Tool:** Regular, transparent communication with your mentors is crucial. My weekly check-ins were invaluable for getting feedback, overcoming roadblocks, and staying aligned with the project's goals. Don't wait until you're stuck; share your progress, your messy notebooks, and your questions.
 
-- **Document As You Go:** The Jupyter notebooks I created during my exploration ([notebooks/](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks/notebooks) directory) were messy but became an invaluable log of my work. They made it much easier to write this final report and later create the clean, user-facing tutorial notebooks. Write down your thought process—it will save you a massive amount of effort later.
+- **Document As You Go:** The Jupyter notebooks I created during my exploration ([notebooks/](https://github.com/malariagen/vector-taxon-classifier-prediction) directory) were messy but became an invaluable log of my work. They made it much easier to write this final report and later create the clean, user-facing tutorial notebooks. Write down your thought process—it will save you a massive amount of effort later.
 
-- **Think About Your End User:** The decision to build both a programmatic API ([main.py](https://github.com/malariagen/vector-taxon-classifier/tree/prod/src/main.py)) and a simple CLI ([cli.py](https://github.com/malariagen/vector-taxon-classifier/tree/prod/src/cli.py)) was driven by considering the different needs of potential users. Always ask: "Who will use this tool, and how can I make their life easier?" This perspective transforms a good technical project into a great, impactful one.
+- **Think About Your End User:** The decision to build both a programmatic API ([main.py](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/src/main.py)) and a simple CLI ([cli.py](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/src/cli.py)) was driven by considering the different needs of potential users. Always ask: "Who will use this tool, and how can I make their life easier?" This perspective transforms a good technical project into a great, impactful one.
 
 ---
 
@@ -144,9 +144,8 @@ Based on my experience this summer, I would offer the following advice to future
 
 All code, models, and documentation are publicly available in the project repository.
 
-- **Repository URL:** [https://github.com/malariagen/vector-taxon-classifier](https://github.com/malariagen/vector-taxon-classifier)
-- **Training Branch:** [`notebooks`](https://github.com/malariagen/vector-taxon-classifier/tree/notebooks)
-- **Production Branch:** [`prod`](https://github.com/malariagen/vector-taxon-classifier/tree/prod)
+- **Repository URL:** [https://github.com/malariagen/vector-taxon-classifier-prediction](https://github.com/malariagen/vector-taxon-classifier-prediction)
+- **Training Branch:** [`notebooks`](https://github.com/malariagen/vector-taxon-classifier-prediction/tree/master/notebooks)
 
 - **Tutorial Notebooks:** The best way to get started is to run the tutorial notebooks located in the `notebooks/` directory in the final repository. Start with `01_basic_setup.ipynb`.
 
